@@ -1,0 +1,23 @@
+#!/bin/bash
+
+pushd client
+yarn run build
+popd
+
+rice embed-go
+
+GOOS=linux GOARCH=amd64 go build
+
+tar -czvf sk8.tgz sk8
+
+scp sk8.tgz gcloud:/home/tom
+
+rm -f sk8
+rm -f sk8.tgz
+rm -f rice-box.go
+
+ssh gcloud << EOF
+ tar -zxf sk8.tgz
+ rm -f sk8.tgz
+ sudo systemctl restart sk8
+EOF

@@ -1,0 +1,13 @@
+[Unit]
+Description=sk8 website
+After=network.target
+
+[Service]
+User=root
+ExecStart=/home/tom/sk8 -p 80
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=sk8
+
+[Install]
+WantedBy=multi-user.target

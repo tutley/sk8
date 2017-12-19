@@ -1,0 +1,15 @@
+package: github.com/tutley/sk8
+import:
+- package: github.com/GeertJohan/go.rice
+- package: github.com/go-chi/chi
+  version: ^3.3.1
+  subpackages:
+  - middleware
+- package: github.com/go-chi/cors
+  version: ^1.0.0
+- package: github.com/tutley/chive
+  subpackages:
+  - handlers
+- package: gopkg.in/mgo.v2
+  subpackages:
+  - bson
