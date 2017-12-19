@@ -5,7 +5,7 @@
 ##### Development
 
 * Run the client by changing to the client directory and executing "npm run dev"
-* Run the server by running "go run \*.go -p <port>" from the project root
+* Run the server by running "go run \*.go" from the project root
 
 ##### Production
 
